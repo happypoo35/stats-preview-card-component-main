@@ -1,0 +1,90 @@
+.card {
+  background: $Dark-desaturated-blue-card-background;
+  border-radius: 0.625rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  margin: 5.5rem 0;
+
+  @include tablet {
+    grid-template-columns: unset;
+  }
+
+  &-text {
+    padding: 4.5rem;
+    padding-bottom: 4rem;
+    @extend %tr;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include mobile {
+      padding: 2.375rem 2rem;
+    }
+  }
+
+  h1 {
+    margin-bottom: 1.75rem;
+
+    @include mobile {
+      margin-bottom: 1.125rem;
+    }
+  }
+
+  p {
+    margin-bottom: 4.75rem;
+    max-width: 21.75rem;
+
+    @include mobile {
+      margin-bottom: 2.75rem;
+    }
+  }
+
+  &-img {
+    position: relative;
+    background: $Soft-violet-accent;
+    min-height: 25rem;
+    @extend %tr;
+
+    @include tablet {
+      grid-row: 1;
+    }
+
+    @include mobile {
+      min-height: 15rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: no-repeat center/cover
+        url("../../images/image-header-desktop.jpg");
+      mix-blend-mode: multiply;
+      opacity: 0.8;
+    }
+  }
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.75rem 1rem;
+  width: min(21.75rem, 100%);
+
+  @include mobile {
+    display: grid;
+    justify-content: center;
+    gap: 1.75rem;
+  }
+
+  h4 {
+    margin-bottom: 0.375rem;
+  }
+}
